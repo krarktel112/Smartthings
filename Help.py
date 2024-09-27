@@ -1,24 +1,6 @@
-#!/usr/bin/env python
-
-from __future__ import print_function
-import sys
-
-import mechanize
-
-if len(sys.argv) == 1:
-    uri = "http://wwwsearch.sourceforge.net/"
-else:
-    uri = sys.argv[1]
-
-br = mechanize.Browser()
-br.open(mechanize.urljoin(uri, "mechanize/example.html"))
 forms = list(br.forms())
-# f = open("example.html")
-# forms = mechanize.ParseFile(f, "http://example.com/example.html",
-# backwards_compat=False)
-# f.close()
 form = forms[0]
-print(form)  # very useful!
+print(form)
 
 # A 'control' is a graphical HTML form widget: a text entry box, a
 # dropdown 'select' list, a checkbox, etc.
