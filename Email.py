@@ -1,8 +1,8 @@
 # Importing libraries
 import imaplib, email
  
-user = 'krarktel@gmail.com'
-password = 'Yuka338'
+user = input("User:")
+password = input("Password:")
 imap_url = 'imap.gmail.com'
  
 # Function to get email content part i.e its body part
