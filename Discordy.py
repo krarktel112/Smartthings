@@ -12,7 +12,8 @@ class MyClient(discord.Client):
         if message.content == 'ping':
             await message.channel.send('pong')
 
+mytoken = input("Token:")
 intents = discord.Intents.default()
 intents.message_content = True
 client = MyClient(intents=intents)
-client.run('token')
+client.run(mytoken)
