@@ -4,7 +4,7 @@ class MyClient(discord.Client):
     async def on_ready(self):
         print('Logged on as', self.user)
 
-    async def on_message(self, message):
+    """async def on_message(self, message):
         # don't respond to ourselves
         if message.author == self.user:
             return
@@ -17,7 +17,7 @@ class MyClient(discord.Client):
             print('{} changed status to {}'.format(
                 after.display_name,
                 after.status
-            ))
+            ))"""
 
 mytoken = input("Token:")
 intents = discord.Intents.default()
