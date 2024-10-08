@@ -19,7 +19,8 @@ class MyClient(discord.Client):
                 after.status
             ))"""
 
+mytoken = input("Token:")
 intents = discord.Intents.default()
 intents.message_content = True
 client = MyClient(intents=intents)
-client.run('MTI5Mjk2MzY2Mzc2NjA5ODAxMw.GaheI3.VKE5ISWmJ1Gwi5ksf1TlGsq9tapC60rZKe42gg')
+client.run(mytoken)
