@@ -3,7 +3,7 @@ from pysmartthings import SmartThings
 
 async def main():
     # Replace with your SmartThings personal access token
-    token = '372563b7-09f8-485b-8c95-261793424ad9'
+    token = str('372563b7-09f8-485b-8c95-261793424ad9')
 
     # Create a SmartThings client
     async with SmartThings(token) as smartthings:
