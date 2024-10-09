@@ -6,7 +6,7 @@ async def main():
     token = "372563b7-09f8-485b-8c95-261793424ad9"
 
     # Create a SmartThings client
-    async with SmartThings(token) as smartthings:
+    async with SmartThings("372563b7-09f8-485b-8c95-261793424ad9") as smartthings:
         # Get all devices
         devices = await smartthings.devices()
 
