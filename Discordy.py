@@ -11,13 +11,15 @@ class MyClient(discord.Client):
 
         if message.content == 'ping':
             await message.channel.send('pong')
+    Id = str('450867169581072394')
+    print(get_user(Id)
 
-    on_presence_update(before=Member.status, after=Member.status):
+    """on_presence_update(before=Member.status, after=Member.status):
       if after.id == my_Member_id:
         print('{} changed status to {}'.format(
             after.display_name,
             after.status
-        ))
+        ))"""
 
 Token = input("Token:")
 intents = discord.Intents.default()
