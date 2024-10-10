@@ -12,22 +12,15 @@ class MyClient(discord.Client):
         if message.content == 'ping':
             await message.channel.send('pong')
 
-    async def on_ready():
-        for guild in client.guilds:
-            if guild.name == GUILD:
-                break
+    on_presence_update(before=Member.status, after=Member.status):
+      if after.id == my_Member_id:
+        print('{} changed status to {}'.format(
+            after.display_name,
+            after.status
+        ))
 
-        print(
-            f'{client.user} is connected to the following guild:\n'
-            f'{guild.name}(id: {guild.id})\n'
-        )
-
-        members = '\n - '.join([member.name for member in guild.members])
-        print(f'Guild Members:\n - {members}')
-
-
-mytoken = input("Token:")
+Token = input("Token:")
 intents = discord.Intents.default()
 intents.message_content = True
 client = MyClient(intents=intents)
-client.run(mytoken)
+client.run('MTI5Mjk2MzY2Mzc2NjA5ODAxMw.GaheI3.VKE5ISWmJ1Gwi5ksf1TlGsq9tapC60rZKe42gg')
