@@ -11,9 +11,10 @@ class MyClient(discord.Client):
 
         if message.content == 'ping':
             await message.channel.send('pong')
-    id = str('450867169581072394')
-    user = get(bot.get_all_members(), id)
-    print(user)
+    id = int('450867169581072394')
+    member = discord.utils.get(message.guild.members, name='Korra122')
+
+    print(member)
 
     """on_presence_update(before=Member.status, after=Member.status):
       if after.id == my_Member_id:
