@@ -12,7 +12,7 @@ class MyClient(discord.Client):
         if message.content == 'ping':
             await message.channel.send('pong')
     id = int('450867169581072394')
-    member = discord.utils.get(message.guild.members, name='Korra122')
+    member = discord.utils.get(guild.members, name='Korra122')
 
     print(member)
 
