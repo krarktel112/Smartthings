@@ -6,7 +6,7 @@ import discord
 class MyClient(discord.Client):
     async def on_ready(self):
         print('Logged on as', self.user)
-    @client.event
+    
     async def on_ready():
         for guild in client.guilds:
             if guild.name == GUILD:
