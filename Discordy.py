@@ -3,7 +3,9 @@ import discord
 class MyClient(discord.Client):
     async def on_ready(self):
         print('Logged on as', self.user)
-
+        guild = client.get_guild(GUILD_ID)
+        user = discord.utils.get(guild.get_all_members())
+        print(user)
     async def on_message(self, message):
         # don't respond to ourselves
         if message.author == self.user:
@@ -12,9 +14,7 @@ class MyClient(discord.Client):
         if message.content == 'ping':
             await message.channel.send('pong')
     id = int('450867169581072394')
-    member = discord.utils.get(guild.members, name='Korra122')
-
-    print(member)
+    
 
     """on_presence_update(before=Member.status, after=Member.status):
       if after.id == my_Member_id:
