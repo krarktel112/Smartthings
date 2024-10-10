@@ -4,7 +4,7 @@ import os
 import discord
 
 
-client = discord.Client()
+
 
 @client.event
 async def on_ready():
@@ -24,4 +24,5 @@ TOKEN = input("Token:")
 intents = discord.Intents.default()
 intents.message_content = True
 client = MyClient(intents=intents)
+client = discord.Client()
 client.run(TOKEN)
