@@ -4,7 +4,12 @@ import os
 import discord
 
 
-
+TOKEN = input("Token:")
+intents = discord.Intents.default()
+intents.message_content = True
+client = MyClient(intents=intents)
+client = discord.Client()
+client.run(TOKEN)
 
 @client.event
 async def on_ready():
@@ -20,9 +25,4 @@ async def on_ready():
     members = '\n - '.join([member.name for member in guild.members])
     print(f'Guild Members:\n - {members}')
 
-TOKEN = input("Token:")
-intents = discord.Intents.default()
-intents.message_content = True
-client = MyClient(intents=intents)
-client = discord.Client()
-client.run(TOKEN)
+
