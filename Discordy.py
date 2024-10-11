@@ -8,6 +8,11 @@ class MyClient(discord.Client):
 
     async def on_message(self, message):
         print(f'Message from {message.author}: {message.content}')
+    
+    async def on_presence_update(before, after):
+        print(after)
+        
+
 
 intents = discord.Intents.default()
 intents.message_content = True
