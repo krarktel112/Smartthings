@@ -1,21 +1,19 @@
-# bot.py
-import os
+# This example requires the 'message_content' intent.
 
 import discord
 
-TOKEN = input("Token:")
+class MyClient(discord.Client):
+    async def on_ready(self):
+        print(f'Logged on as {self.user}!')
 
-client = discord.Client()
+    async def on_message(self, message):
+        print(f'Message from {message.author}: {message.content}')
 
-@client.event
-async def on_ready():
-    print(f'{client.user.name} has connected to Discord!')
+intents = discord.Intents.default()
+intents.message_content = True
+intents.presences = True 
+intents.member = True
 
-@client.event
-async def on_member_join(member):
-    await member.create_dm()
-    await member.dm_channel.send(
-        f'Hi {member.name}, welcome to my Discord server!'
-    )
 
-client.run(TOKEN)
+client = MyClient(intents=intents)
+client.run(token)
