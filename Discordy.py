@@ -21,4 +21,4 @@ intents.members = True
 
 Token = input("Token:")
 client = MyClient(intents=intents)
-client.run(token)
+client.run(Token)
