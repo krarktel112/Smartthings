@@ -1,30 +1,23 @@
+# bot.py
+import os
+
 import discord
+from dotenv import load_dotenv
 
-class MyClient(discord.Client):
-    async def on_ready(self):
-        print('Logged on as', self.user)
-        guild = client.get_guild(GUILD_ID)
-        user = discord.utils.get(guild.get_all_members())
-        print(user)
-    async def on_message(self, message):
-        # don't respond to ourselves
-        if message.author == self.user:
-            return
+load_dotenv()
+TOKEN = input("Token:")
 
-        if message.content == 'ping':
-            await message.channel.send('pong')
-    id = int('450867169581072394')
-    
+client = discord.Client()
 
-    """on_presence_update(before=Member.status, after=Member.status):
-      if after.id == my_Member_id:
-        print('{} changed status to {}'.format(
-            after.display_name,
-            after.status
-        ))"""
+@client.event
+async def on_ready():
+    print(f'{client.user.name} has connected to Discord!')
 
-Token = input("Token:")
-intents = discord.Intents.default()
-intents.message_content = True
-client = MyClient(intents=intents)
-client.run('MTI5Mjk2MzY2Mzc2NjA5ODAxMw.GaheI3.VKE5ISWmJ1Gwi5ksf1TlGsq9tapC60rZKe42gg')
+@client.event
+async def on_member_join(member):
+    await member.create_dm()
+    await member.dm_channel.send(
+        f'Hi {member.name}, welcome to my Discord server!'
+    )
+
+client.run(TOKEN)
