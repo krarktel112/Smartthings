@@ -3,7 +3,6 @@ import os
 
 import discord
 
-load_dotenv()
 TOKEN = input("Token:")
 
 client = discord.Client()
