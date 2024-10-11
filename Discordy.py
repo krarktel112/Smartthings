@@ -19,6 +19,6 @@ intents.message_content = True
 intents.presences = True 
 intents.members = True
 
-
+Token = input("Token:")
 client = MyClient(intents=intents)
 client.run(token)
