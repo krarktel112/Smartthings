@@ -6,5 +6,5 @@ print(ST.scenes)
 # Reference the SmartThings API documentation for information regarding the
 # format of capabilities, commands, and arguments
 
-ST.execute_scene(ST.scenes[Home][Ashley1])
+ST.execute_scene(ST.scenes['Home']['Ashley1'])
 
