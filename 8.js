@@ -18,7 +18,7 @@ async function executeScene(sceneId) {
 executeScene('YOUR_SCENE_ID');
 const { SmartThingsClient, BearerTokenAuthenticator } = require('@smartthings/core-sdk');
 
-const PERSONAL_ACCESS_TOKEN = 'YOUR_PERSONAL_ACCESS_TOKEN';
+const PERSONAL_ACCESS_TOKEN = '372563b7-09f8-485b-8c95-261793424ad9';
 const ROUTINE_ID = 'YOUR_ROUTINE_ID';
 
 const client = new SmartThingsClient(new BearerTokenAuthenticator(PERSONAL_ACCESS_TOKEN));
