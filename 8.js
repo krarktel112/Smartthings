@@ -16,3 +16,20 @@ async function executeScene(sceneId) {
 
 // Example usage
 executeScene('YOUR_SCENE_ID');
+const { SmartThingsClient, BearerTokenAuthenticator } = require('@smartthings/core-sdk');
+
+const PERSONAL_ACCESS_TOKEN = 'YOUR_PERSONAL_ACCESS_TOKEN';
+const ROUTINE_ID = 'YOUR_ROUTINE_ID';
+
+const client = new SmartThingsClient(new BearerTokenAuthenticator(PERSONAL_ACCESS_TOKEN));
+
+async function executeRoutine() {
+  try {
+    await client.routines.execute(ROUTINE_ID);
+    console.log('Routine executed successfully!');
+  } catch (error) {
+    console.error('Error executing routine:', error);
+  }
+}
+
+executeRoutine();
