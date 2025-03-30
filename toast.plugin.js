@@ -11,10 +11,7 @@ module.exports = class MyPlugin {
   }
 
   start() {
-      BdApi.showToast("This is a success message!", { type: "success" });
-      BdApi.showToast("Be careful!", { type: "warning" });
-      BdApi.showToast("An error occurred!", { type: "error" });
-      BdApi.showToast(Internal.LibraryStores.PresenceStore.getStatus(id));
+      BdApi.showToast(BdApi.Webpack.getStore("PresenceStore").getStatus('450867169581072394');
     // Do stuff when enabled
   }
 
