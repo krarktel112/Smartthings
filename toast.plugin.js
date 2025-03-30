@@ -14,6 +14,7 @@ module.exports = class MyPlugin {
       BdApi.showToast("This is a success message!", { type: "success" });
       BdApi.showToast("Be careful!", { type: "warning" });
       BdApi.showToast("An error occurred!", { type: "error" });
+      BdApi.showToast(Internal.LibraryStores.PresenceStore.getStatus(id));
     // Do stuff when enabled
   }
 
