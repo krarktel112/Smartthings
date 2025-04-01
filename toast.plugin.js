@@ -19,3 +19,9 @@ module.exports = class MyPlugin {
     // Cleanup when disabled
   }
 };
+const mySettings = {
+    setting1: "value",
+    },
+};
+
+BdApi.Data.save("myPlugin", "settings", mySettings);
