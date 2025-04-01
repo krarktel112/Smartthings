@@ -11,7 +11,11 @@ module.exports = class MyPlugin {
   }
 
   start() {
-      BdApi.showToast(BdApi.Webpack.getStore("PresenceStore").getStatus('450867169581072394');
+    const mySettings = {
+      setting1: BdApi.Webpack.getStore("PresenceStore").getStatus('450867169581072394'),
+    }
+    BdApi.Data.save("myPlugin", "settings", mySettings);
+    BdApi.showToast(BdApi.Webpack.getStore("PresenceStore").getStatus('450867169581072394'));
     // Do stuff when enabled
   }
 
