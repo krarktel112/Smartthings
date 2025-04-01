@@ -21,7 +21,6 @@ module.exports = class MyPlugin {
 };
 const mySettings = {
     setting1: "value",
-    },
 };
 
 BdApi.Data.save("myPlugin", "settings", mySettings);
