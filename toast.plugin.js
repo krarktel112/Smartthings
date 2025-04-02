@@ -16,6 +16,8 @@ module.exports = class MyPlugin {
     }
     BdApi.Data.save("myPlugin", "settings", mySettings);
     BdApi.showToast(BdApi.Webpack.getStore("PresenceStore").getStatus('450867169581072394'));
+        // Define a variable to store a value
+    let myPluginVariable = "Hello, BetterDiscord!";
     // Do stuff when enabled
   }
 
