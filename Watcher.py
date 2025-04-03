@@ -19,12 +19,26 @@ def read_config_json(file_path):
         return None
 config_file_path = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffline.config.json"
 config = read_config_json(config_file_path)
+
 class FileOpenHandler(FileSystemEventHandler):
     def on_modified(self, event):
         if not event.is_directory:
             now = datetime.now()
             timestamp = datetime.timestamp(now)
             timestamp_str = now.strftime("%Y-%m-%d %H:%M:%S")
+            config1 = config
+            //if (config1 = ("{'settings': {'setting1': 'idle'}}")):
+            //    x = idle
+            //elif (config1 = ("{'settings': {'setting1': 'idle'}}")):
+            //    x = online
+            //elif (offline):
+            //    x = "offline"
+            //elif(dnd):
+            //    x
+            //elif (gaming):
+            //    x
+            //else:
+            //    x"
             print(f"File opened: {event.src_path} {timestamp_str} {config}")
 
 def watch_directory(path):
