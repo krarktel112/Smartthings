@@ -8,7 +8,8 @@ class FileOpenHandler(FileSystemEventHandler):
         if not event.is_directory:
             now = datetime.now()
             timestamp = datetime.timestamp(now)
-            print(f"File opened: {event.src_path} {timestamp}")
+            timestamp_str = now.strftime("%Y-%m-%d %H:%M:%S")
+            print(f"File opened: {event.src_path} {timestamp_str}")
 
 def watch_directory(path):
     observer = Observer()
