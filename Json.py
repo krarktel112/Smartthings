@@ -17,5 +17,21 @@ config_file_path = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aofflin
 config = read_config_json(config_file_path)
 if config:
     print(config)
+    if (config = ("{'settings': {'setting1': 'online'}}")):
+        print("Online")
+    elif(config = ("{'settings': {'setting1': 'idle'}}")):
+        print("Idle")
+    elif(config = ("{'settings': {'setting1': 'dnd'}}")):
+        print("DND")
+    elif(config = ("{'settings': {'setting1': 'gaming'}}")):
+        print("Gaming")
+    elif(config = ("{'settings': {'setting1': 'playing'}}")):
+        print("Playing")
+    elif(config = ("{'settings': {'setting1': 'listening'}}")):
+        print("Listening")
+    elif(config = ("{'settings': {'setting1': 'streaming'}}")):
+        print("Streaming")
+    else:
+        print(config)
 else:
     print("Failed to load configuration.")
