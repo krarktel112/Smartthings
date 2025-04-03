@@ -1,11 +1,14 @@
 import time
+from datetime import datetime
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 
 class FileOpenHandler(FileSystemEventHandler):
     def on_modified(self, event):
         if not event.is_directory:
-            print(f"File opened: {event.src_path}")
+            now = datetime.now()
+            timestamp = datetime.timestamp(now)
+            print(f"File opened: {event.src_path} {timestamp}")
 
 def watch_directory(path):
     observer = Observer()
