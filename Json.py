@@ -13,7 +13,7 @@ def read_config_json(file_path):
     except  Exception as e:
         print(f"An unexpected error occured: {e}")
         return None
-config_file_path = 'C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffline.config.json'
+config_file_path = 'Aoffline.config.json'
 config = read_config_json(config_file_path)
 if config:
     print(config)
