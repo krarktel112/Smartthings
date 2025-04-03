@@ -10,9 +10,6 @@ class FileOpenHandler(FileSystemEventHandler):
             now = datetime.now()
             timestamp = datetime.timestamp(now)
             timestamp_str = now.strftime("%Y-%m-%d %H:%M:%S")
-            with open("C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffline.config", "r") as file:
-                line = file.readline(-3)
-                print(line)
             print(f"File opened: {event.src_path} {timestamp_str}")
 
 def watch_directory(path):
