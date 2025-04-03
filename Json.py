@@ -15,21 +15,28 @@ def read_config_json(file_path):
         return None
 config_file_path = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffline.config.json"
 config = read_config_json(config_file_path)
+online = "online"
+idle = "idle"
+dnd = "dnd"
+gaming = "gaming"
+streaming = "streaming"
+listening = "listening"
+playing = "playing"
 if config:
     print(config)
-    if (config == ("{'settings': {'setting1': 'online'}}")):
+    if online in config:
         print("Online")
-    elif(config == ("{'settings': {'setting1': 'idle'}}")):
+    elif idle in config:
         print("Idle")
-    elif(config == ("{'settings': {'setting1': 'dnd'}}")):
+    elif dnd in config:
         print("DND")
-    elif(config == ("{'settings': {'setting1': 'gaming'}}")):
+    elif gaming in config:
         print("Gaming")
-    elif(config == ("{'settings': {'setting1': 'playing'}}")):
+    elif playing in config:
         print("Playing")
-    elif(config == ("{'settings': {'setting1': 'listening'}}")):
+    elif listening in config:
         print("Listening")
-    elif(config == ("{'settings': {'setting1': 'streaming'}}")):
+    elif streaming in config:
         print("Streaming")
     else:
         print(config)
