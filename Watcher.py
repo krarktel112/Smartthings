@@ -43,7 +43,7 @@ class FileOpenHandler(FileSystemEventHandler):
             //else:
             //    x"
             print(f"File opened: {event.src_path} {timestamp_str} {config}")
-ST.execute_scene(ST.scenes['Home']['Ashley1'])
+             ST.execute_scene(ST.scenes['Home']['Ashley1'])
 
 def watch_directory(path):
     observer = Observer()
