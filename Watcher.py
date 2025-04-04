@@ -30,20 +30,8 @@ class FileOpenHandler(FileSystemEventHandler):
             timestamp = datetime.timestamp(now)
             timestamp_str = now.strftime("%Y-%m-%d %H:%M:%S")
             config1 = config
-            //if (config1 = ("{'settings': {'setting1': 'idle'}}")):
-            //    x = idle
-            //elif (config1 = ("{'settings': {'setting1': 'idle'}}")):
-            //    x = online
-            //elif (offline):
-            //    x = "offline"
-            //elif(dnd):
-            //    x
-            //elif (gaming):
-            //    x
-            //else:
-            //    x"
             print(f"File opened: {event.src_path} {timestamp_str} {config}")
-             ST.execute_scene(ST.scenes['Home']['Ashley1'])
+            ST.execute_scene(ST.scenes['Home']['Ashley1'])
 
 def watch_directory(path):
     observer = Observer()
