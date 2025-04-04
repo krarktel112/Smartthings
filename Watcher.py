@@ -3,6 +3,7 @@ import json
 from datetime import datetime
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
+import SmartThings
 
 def read_config_json(file_path):
     try:
@@ -19,6 +20,8 @@ def read_config_json(file_path):
         return None
 config_file_path = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffline.config.json"
 config = read_config_json(config_file_path)
+token = '372563b7-09f8-485b-8c95-261793424ad9'
+ST = SmartThings.Account(token)
 
 class FileOpenHandler(FileSystemEventHandler):
     def on_modified(self, event):
@@ -40,6 +43,7 @@ class FileOpenHandler(FileSystemEventHandler):
             //else:
             //    x"
             print(f"File opened: {event.src_path} {timestamp_str} {config}")
+ST.execute_scene(ST.scenes['Home']['Ashley1'])
 
 def watch_directory(path):
     observer = Observer()
