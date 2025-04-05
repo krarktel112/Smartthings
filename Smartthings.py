@@ -1,9 +1,22 @@
-import SmartThings
+import aiohttp
+import pysmartthings
 
-token = '372563b7-09f8-485b-8c95-261793424ad9'
-ST = SmartThings.Account(token)
-# Reference the SmartThings API documentation for information regarding the
-# format of capabilities, commands, and arguments
+async def control_switch(device_id, action):
+    token = "YOUR_SMARTTHINGS_TOKEN"  # Replace with your actual token
+    async with aiohttp.ClientSession() as session:
+        api = pysmartthings.SmartThings(session, token)
+        device = await api.devices.get(device_id)
+        
+        if action == "on":
+            await device.command("main", "switch", "on")
+            print(f"Turned on device: {device.label}")
+        elif action == "off":
+            await device.command("main", "switch", "off")
+             print(f"Turned off device: {device.label}")
+        else:
+            print("Invalid action. Use 'on' or 'off'.")
 
-ST.CONTROL_DEVICE(ST.devices['Home']['Ashley1'], capability=switch, command=off(), arguments=None)
-
+# Example usage:
+device_id_to_control = "YOUR_DEVICE_ID"  # Replace with the actual device ID
+await control_switch(device_id_to_control, "on")
+await control_switch(device_id_to_control, "off")
