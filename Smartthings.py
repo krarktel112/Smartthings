@@ -5,5 +5,5 @@ ST = SmartThings.Account(token)
 # Reference the SmartThings API documentation for information regarding the
 # format of capabilities, commands, and arguments
 
-ST.CONTROL_DEVICE(ST.devices['Home']['Ashley1'], capability=switch, command=off(), arguments=None))
+ST.CONTROL_DEVICE(ST.devices['Home']['Ashley1'], capability=switch, command=off(), arguments=None)
 
