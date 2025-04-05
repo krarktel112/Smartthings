@@ -12,7 +12,7 @@ async def control_switch(device_id, action):
             print(f"Turned on device: {device.label}")
         elif action == "off":
             await device.command("main", "switch", "off")
-             print(f"Turned off device: {device.label}")
+            print(f"Turned off device: {device.label}")
         else:
             print("Invalid action. Use 'on' or 'off'.")
 
