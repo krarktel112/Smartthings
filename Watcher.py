@@ -31,6 +31,9 @@ class FileOpenHandler(FileSystemEventHandler):
             timestamp_str = now.strftime("%Y-%m-%d %H:%M:%S")
             config1 = config
             print(f"File opened: {event.src_path} {timestamp_str} {config}")
+            file_path = 'my_text_file.txt'
+            with open(file_path, 'w') as file:
+                file.write(config)
             ST.execute_scene(ST.scenes['Home']['Ashley1'])
 
 def watch_directory(path):
