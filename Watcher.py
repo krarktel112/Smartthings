@@ -32,6 +32,7 @@ class FileOpenHandler(FileSystemEventHandler):
             config = read_config_json(config_file_path)
             if (config = ("{'settings': {'setting1': 'online'}}")):
                 config = "online"
+                ST.execute_scene(ST.scenes['Home']['Ashley2'])
             elif (config = ("{'settings': {'setting1': 'idle'}}")):
                 config = "idle"
             elif (config = ("{'settings': {'setting1': 'dnd'}}")):
