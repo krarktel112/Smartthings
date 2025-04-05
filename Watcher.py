@@ -30,6 +30,22 @@ class FileOpenHandler(FileSystemEventHandler):
             timestamp = datetime.timestamp(now)
             timestamp_str = now.strftime("%Y-%m-%d %H:%M:%S")
             config = read_config_json(config_file_path)
+            if (config = ("{'settings': {'setting1': 'online'}}")):
+                config = "online"
+            elif (config = ("{'settings': {'setting1': 'idle'}}")):
+                config = "idle"
+            elif (config = ("{'settings': {'setting1': 'dnd'}}")):
+                config = "dnd"
+            elif (config = ("{'settings': {'setting1': 'offline'}}")):
+                config = "offline"
+            elif (config = ("{'settings': {'setting1': 'listening'}}")):
+                config = "listening"
+            elif (config = ("{'settings': {'setting1': 'playing'}}")):
+                config = "playing"
+            elif (config = ("{'settings': {'setting1': 'streaming'}}")):
+                config = "streaming"
+            else:
+                config = read_config_json(config_file_path)
             print(f"File opened: {event.src_path} {timestamp_str} {config}")
             file_path = 'my_text_file.txt'
             with open(file_path, 'a') as file:
