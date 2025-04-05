@@ -33,7 +33,7 @@ class FileOpenHandler(FileSystemEventHandler):
             print(f"File opened: {event.src_path} {timestamp_str} {config}")
             file_path = 'my_text_file.txt'
             with open(file_path, 'a') as file:
-                file.write(f"File opened: {event.src_path} {timestamp_str} {config}")
+                file.write(f"File opened: {event.src_path} {timestamp_str} {config}\n")
             ST.execute_scene(ST.scenes['Home']['Ashley1'])
 
 def watch_directory(path):
