@@ -35,10 +35,12 @@ class FileOpenHandler(FileSystemEventHandler):
                 ST.execute_scene(ST.scenes['Home']['Ashley2'])
             elif (config = ("{'settings': {'setting1': 'idle'}}")):
                 config = "idle"
+                ST.execute_scene(ST.scenes['Home']['Ashley3'])
             elif (config = ("{'settings': {'setting1': 'dnd'}}")):
                 config = "dnd"
             elif (config = ("{'settings': {'setting1': 'offline'}}")):
                 config = "offline"
+                ST.execute_scene(ST.scenes['Home']['Ashley1'])
             elif (config = ("{'settings': {'setting1': 'listening'}}")):
                 config = "listening"
             elif (config = ("{'settings': {'setting1': 'playing'}}")):
