@@ -18,5 +18,5 @@ async def control_switch(device_id, action):
 
 # Example usage:
 device_id_to_control = "96ce780f-8c5d-4f3b-adc9-a368875a3343"  # Replace with the actual device ID
-await control_switch(device_id_to_control, "on")
-await control_switch(device_id_to_control, "off")
+control_switch(device_id_to_control, "on")
+control_switch(device_id_to_control, "off")
