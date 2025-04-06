@@ -30,23 +30,23 @@ class FileOpenHandler(FileSystemEventHandler):
             timestamp = datetime.timestamp(now)
             timestamp_str = now.strftime("%Y-%m-%d %H:%M:%S")
             config = read_config_json(config_file_path)
-            if (config = ("{'settings': {'setting1': 'online'}}")):
-                config = "online"
+            if (config == ("{'settings': {'setting1': 'online'}}")):
+                config == "online"
                 "ST.execute_scene(ST.scenes['Home']['Ashley2'])"
-            elif (config = ("{'settings': {'setting1': 'idle'}}")):
-                config = "idle"
+            elif (config == ("{'settings': {'setting1': 'idle'}}")):
+                config == "idle"
                 "ST.execute_scene(ST.scenes['Home']['Ashley3'])"
-            elif (config = ("{'settings': {'setting1': 'dnd'}}")):
-                config = "dnd"
-            elif (config = ("{'settings': {'setting1': 'offline'}}")):
-                config = "offline"
+            elif (config == ("{'settings': {'setting1': 'dnd'}}")):
+                config == "dnd"
+            elif (config == ("{'settings': {'setting1': 'offline'}}")):
+                config == "offline"
                 "ST.execute_scene(ST.scenes['Home']['Ashley1'])"
-            elif (config = ("{'settings': {'setting1': 'listening'}}")):
-                config = "listening"
-            elif (config = ("{'settings': {'setting1': 'playing'}}")):
-                config = "playing"
-            elif (config = ("{'settings': {'setting1': 'streaming'}}")):
-                config = "streaming"
+            elif (config == ("{'settings': {'setting1': 'listening'}}")):
+                config == "listening"
+            elif (config == ("{'settings': {'setting1': 'playing'}}")):
+                config == "playing"
+            elif (config == ("{'settings': {'setting1': 'streaming'}}")):
+                config == "streaming"
             else:
                 config = read_config_json(config_file_path)
             print(f"File opened: {event.src_path} {timestamp_str} {config}")
