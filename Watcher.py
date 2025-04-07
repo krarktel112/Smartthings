@@ -34,18 +34,6 @@ class FileOpenHandler(FileSystemEventHandler):
             file_path = 'my_text_file.txt'
             with open(file_path, 'a') as file:
                 file.write(f"File opened: {event.src_path} {timestamp_str} {config}\n")
-            with open(file_path, "r") as file:
-                lines = file.readlines()
-                last_line = lines[-1]
-            if "online" in last_line:
-                ST.execute_scene(ST.scenes['Home']['Ashley1'])
-            if "idle" in last_line:
-                ST.execute_scene(ST.scenes['Home']['Ashley1'])
-            if "offline" in last_line:
-                ST.execute_scene(ST.scenes['Home']['Ashley1'])
-            if "dnd" in last_line:
-                ST.execute_scene(ST.scenes['Home']['Ashley1'])
-            
             ST.execute_scene(ST.scenes['Home']['Ashley1'])
 
 def watch_directory(path):
