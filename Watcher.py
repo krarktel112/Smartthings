@@ -43,11 +43,11 @@ class FileOpenHandler(FileSystemEventHandler):
                         if "online" in last_line:
                             ST.execute_scene(ST.scenes['Home']['Ashley1'])
                         if "idle" in last_line:
-                            ST.execute_scene(ST.scenes['Home']['Ashley2'])
-                        if "dnd" in last_line:
                             ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                        if "offline" in last_line:
+                        if "dnd" in last_line:
                             ST.execute_scene(ST.scenes['Home']['Ashley3'])
+                        if "offline" in last_line:
+                            ST.execute_scene(ST.scenes['Home']['Ashley2'])
                         if "gaming" in last_line:
                             ST.execute_scene(ST.scenes['Home']['Ashley1'])
                         if "listening" in last_line:
