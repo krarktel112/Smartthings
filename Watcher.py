@@ -41,19 +41,19 @@ class FileOpenHandler(FileSystemEventHandler):
                         lines = file.readlines()
                         last_line = lines[-1]
                         if "online" in last_line:
-                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
+                            ST.execute_scene(ST.scenes['Home']['0'])
                         if "idle" in last_line:
-                            ST.execute_scene(ST.scenes['Home']['Ashley3'])
+                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
                         if "dnd" in last_line:
-                            ST.execute_scene(ST.scenes['Home']['Ashley4'])
+                            ST.execute_scene(ST.scenes['Home']['Home 1'])
                         if "offline" in last_line:
-                            ST.execute_scene(ST.scenes['Home']['Ashley2'])
-                        if "gaming" in last_line:
-                            ST.execute_scene(ST.scenes['Home']['Ashley5'])
-                        if "listening" in last_line:
-                            ST.execute_scene(ST.scenes['Home']['Ashley5'])
-                        if "playing" in last_line:
-                            ST.execute_scene(ST.scenes['Home']['Ashley5'])
+                            ST.execute_scene(ST.scenes['Home']['online'])
+                        #if "gaming" in last_line:
+                            #ST.execute_scene(ST.scenes['Home']['Ashley5'])
+                        #if "listening" in last_line:
+                            #ST.execute_scene(ST.scenes['Home']['Ashley5'])
+                        #if "playing" in last_line:
+                            #ST.execute_scene(ST.scenes['Home']['Ashley5'])
             else:
                 ST.execute_scene(ST.scenes['Home']['Ashley5'])
 
