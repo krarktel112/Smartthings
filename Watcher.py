@@ -18,6 +18,24 @@ def read_config_json(file_path):
     except  Exception as e:
         print(f"An unexpected error occured: {e}")
         return None
+def stats(line):
+    with open("my_text_file.txt", "r") as file:
+        lines = file.readlines()
+        last_line = lines[-1]
+    if "online" in last_line:
+        return "online"
+    if "idle" in last_line:
+        return "idle"
+    if "dnd" in last_line:
+        return "dnd"
+    if "offline" in last_line:
+        return "offline"
+    if "gaming" in last_line:
+        return "gaming"
+    if "listening" in last_line:
+        return "listening"
+    if "playing" in last_line:
+        return "playing"
 config_file_path2 = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffline.config.json"
 config = read_config_json(config_file_path)
 token = '372563b7-09f8-485b-8c95-261793424ad9'
@@ -31,15 +49,28 @@ class FileOpenHandler(FileSystemEventHandler):
             timestamp_str = now.strftime("%Y-%m-%d %H:%M:%S")
             config = read_config_json(config_file_path)
             x = event.src_path
-            if x = config_file_path2:
-                print(event.src_path)
-            else:
-                x = event.src_path 
             print(f"File opened: {event.src_path} {timestamp_str} {config}")
-            if x = config_file_path2:
+            if x == config_file_path2:
                 file_path = 'my_text_file.txt'
                 with open(file_path, 'a') as file:
                     file.write(f"Korra: {timestamp_str} {config}\n")
+                    with open(file_path, "r") as file:
+                        lines = file.readlines()
+                        last_line = lines[-1]
+                        if "online" in last_line:
+                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
+                        if "idle" in last_line:
+                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
+                        if "dnd" in last_line:
+                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
+                        if "offline" in last_line:
+                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
+                        if "gaming" in last_line:
+                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
+                        if "listening" in last_line:
+                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
+                        if "playing" in last_line:
+                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
                 ST.execute_scene(ST.scenes['Home']['Ashley1'])
             else:
                 ST.execute_scene(ST.scenes['Home']['Ashley1'])
