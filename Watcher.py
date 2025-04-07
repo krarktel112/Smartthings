@@ -30,16 +30,19 @@ class FileOpenHandler(FileSystemEventHandler):
             timestamp = datetime.timestamp(now)
             timestamp_str = now.strftime("%Y-%m-%d %H:%M:%S")
             config = read_config_json(config_file_path)
-            x == event.src_path
+            x = event.src_path
             if x = config_file_path2:
                 print(event.src_path)
             else:
                 x == event.src_path 
             print(f"File opened: {event.src_path} {timestamp_str} {config}")
-            file_path = 'my_text_file.txt'
-            with open(file_path, 'a') as file:
-                file.write(f"File opened: {event.src_path} {timestamp_str} {config}\n")
-            ST.execute_scene(ST.scenes['Home']['Ashley1'])
+            if x = config_file_path2:
+                file_path = 'my_text_file.txt'
+                with open(file_path, 'a') as file:
+                    file.write(f"Korra: {timestamp_str} {config}\n")
+                ST.execute_scene(ST.scenes['Home']['Ashley1'])
+            else:
+                ST.execute_scene(ST.scenes['Home']['Ashley1'])
 
 def watch_directory(path):
     observer = Observer()
