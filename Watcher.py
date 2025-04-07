@@ -34,7 +34,7 @@ class FileOpenHandler(FileSystemEventHandler):
             if x = config_file_path2:
                 print(event.src_path)
             else:
-                x == event.src_path 
+                x = event.src_path 
             print(f"File opened: {event.src_path} {timestamp_str} {config}")
             if x = config_file_path2:
                 file_path = 'my_text_file.txt'
