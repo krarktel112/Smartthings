@@ -18,24 +18,7 @@ def read_config_json(file_path):
     except  Exception as e:
         print(f"An unexpected error occured: {e}")
         return None
-def stats(line):
-    with open("my_text_file.txt", "r") as file:
-        lines = file.readlines()
-        last_line = lines[-1]
-    if "online" in last_line:
-        return "online"
-    if "idle" in last_line:
-        return "idle"
-    if "dnd" in last_line:
-        return "dnd"
-    if "offline" in last_line:
-        return "offline"
-    if "gaming" in last_line:
-        return "gaming"
-    if "listening" in last_line:
-        return "listening"
-    if "playing" in last_line:
-        return "playing"
+
 config_file_path2 = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffline.config.json"
 config = read_config_json(config_file_path)
 token = '372563b7-09f8-485b-8c95-261793424ad9'
@@ -60,11 +43,11 @@ class FileOpenHandler(FileSystemEventHandler):
                         if "online" in last_line:
                             ST.execute_scene(ST.scenes['Home']['Ashley1'])
                         if "idle" in last_line:
-                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
+                            ST.execute_scene(ST.scenes['Home']['Ashley2'])
                         if "dnd" in last_line:
                             ST.execute_scene(ST.scenes['Home']['Ashley1'])
                         if "offline" in last_line:
-                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
+                            ST.execute_scene(ST.scenes['Home']['Ashley3'])
                         if "gaming" in last_line:
                             ST.execute_scene(ST.scenes['Home']['Ashley1'])
                         if "listening" in last_line:
