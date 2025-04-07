@@ -18,7 +18,7 @@ def read_config_json(file_path):
     except  Exception as e:
         print(f"An unexpected error occured: {e}")
         return None
-config_file_path = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffline.config.json"
+config_file_path2 = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffline.config.json"
 config = read_config_json(config_file_path)
 token = '372563b7-09f8-485b-8c95-261793424ad9'
 ST = SmartThings.Account(token)
@@ -31,6 +31,10 @@ class FileOpenHandler(FileSystemEventHandler):
             timestamp_str = now.strftime("%Y-%m-%d %H:%M:%S")
             config = read_config_json(config_file_path)
             x == event.src_path
+            if x = config_file_path2:
+                print(event.src_path)
+            else:
+                x == event.src_path 
             print(f"File opened: {event.src_path} {timestamp_str} {config}")
             file_path = 'my_text_file.txt'
             with open(file_path, 'a') as file:
