@@ -23,6 +23,7 @@ config_file_path2 = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffli
 config = read_config_json(config_file_path)
 token = '372563b7-09f8-485b-8c95-261793424ad9'
 ST = SmartThings.Account(token)
+y == "pop"
 
 class FileOpenHandler(FileSystemEventHandler):
     def on_modified(self, event):
@@ -35,8 +36,6 @@ class FileOpenHandler(FileSystemEventHandler):
             print(f"File opened: {event.src_path} {timestamp_str} {config}")
             if x == config_file_path2:
                 file_path = 'my_text_file.txt'
-                with open(file_path, 'a') as file:
-                    file.write(f"Korra: {timestamp_str} {config}\n")
                     with open(file_path, "r") as file:
                         lines = file.readlines()
                         last_line = lines[-1]
@@ -44,25 +43,25 @@ class FileOpenHandler(FileSystemEventHandler):
                             if y == "online":
                                 y == "online"
                             else:
-                                ST.execute_scene(ST.scenes['Home']['0'])
+                                ST.execute_scene(ST.scenes['Home']['Ashley1'])
                                 y == "online"
                         if "idle" in last_line:
                             if y == "idle":
                                 y == "idle"
                             else:
-                                ST.execute_scene(ST.scenes['Home']['Ashley1'])
+                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
                                 y == "idle"
                         if "dnd" in last_line:
                             if y == "dnd":
                                 y == "dnd"
                             else:
-                                ST.execute_scene(ST.scenes['Home']['Home 1'])
+                                ST.execute_scene(ST.scenes['Home']['Ashley3'])
                                 y == "dnd"
                         if "offline" in last_line:
                             if y == "offline":
                                 y == "offline"
                             else:
-                                ST.execute_scene(ST.scenes['Home']['online'])
+                                ST.execute_scene(ST.scenes['Home']['Ashley4'])
                                 y == "offline"
                         #if "gaming" in last_line:
                             #ST.execute_scene(ST.scenes['Home']['Ashley5'])
@@ -71,8 +70,7 @@ class FileOpenHandler(FileSystemEventHandler):
                         #if "playing" in last_line:
                             #ST.execute_scene(ST.scenes['Home']['Ashley5'])
             else:
-                ST.execute_scene(ST.scenes['Home']['Ashley5'])
-
+                ST.execute_scene(ST.scenes['Home']['Ashley4'])
 def watch_directory(path):
     observer = Observer()
     event_handler = FileOpenHandler()
