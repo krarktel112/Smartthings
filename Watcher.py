@@ -41,12 +41,17 @@ class FileOpenHandler(FileSystemEventHandler):
                         lines = file.readlines()
                         last_line = lines[-1]
                         if "online" in last_line:
-                            ST.execute_scene(ST.scenes['Home']['0'])
-                            y == "online"
+                            if y == "online":
+                                y == "online"
+                            else:
+                                ST.execute_scene(ST.scenes['Home']['0'])
+                                y == "online"
                         if "idle" in last_line:
-
-ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                            y == "online"
+                            if y == "idle":
+                                y == "idle"
+                            else:
+                                ST.execute_scene(ST.scenes['Home']['Ashley1'])
+                                y == "idle"
                         if "dnd" in last_line:
                             if y == "dnd":
                                 y == "dnd"
