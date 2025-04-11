@@ -15,6 +15,7 @@ payload = {
 
 try:
     response = requests.get(base_url, params=payload)
+    response.raise_for_status()
     print("Voice Monkey triggered successfully.")
 except requests.exceptions.RequestException as e:
     print(f"Error triggering Voice Monkey: {e}")
