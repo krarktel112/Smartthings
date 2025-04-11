@@ -1,21 +1,14 @@
 import requests
 
-base_url = "https://api.voicemonkey.io/trigger"
-access_token = "b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2"
-GET = "b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=echo1"
-#monkey = "<your_monkey_id>"
-#announcement = "<your_announcement_text>" # Optional: for announcement
-
-payload = {
-    "access_token": access_token,
-    #"se": secret_token,
-    "GET": GET
-#    "announcement": announcement  # Include if you want to make an announcement
-}
+url = "https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=echo1"
 
 try:
-    response = requests.get(base_url, params=payload)
-    response.raise_for_status()
-    print("Voice Monkey triggered successfully.")
+    response = requests.get(url)
+    response.raise_for_status()  # Raise HTTPError for bad responses (4xx or 5xx)
+    
+    # Access the content of the response
+    html_content = response.text
+    print(html_content)
+
 except requests.exceptions.RequestException as e:
-    print(f"Error triggering Voice Monkey: {e}")
+    print(f"An error occurred: {e}")
