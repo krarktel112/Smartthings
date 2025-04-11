@@ -1,23 +1,22 @@
-# Example Intent Handler (Conceptual)
-def turn_off_switch_handler(handler_input):
-    # Get the device ID from the user request
-    device_id = handler_input.request_envelope.request.context.device.deviceId
-    # Get the namespace for the device (e.g., "Alexa.PowerController")
-    namespace = "Alexa.PowerController"
-    # Construct the API call
-    command = {
-        "header": {
-            "namespace": namespace,
-            "name": "TurnOff",
-            "payloadVersion": "3",
-            "correlationToken": handler_input.request_envelope.request.requestId
-        },
-        "payload": {
-            "deviceId": device_id
-        }
-    }
-    # Call the Alexa Smart Home API
-    handler_input.request_envelope.request.context.device.capabilities.powerController.turnOff(command)
-    # Return a response to the user
-    handler_input.response_builder.speak("OK, I've turned off the switch").set_should_end_session(True)
-    return handler_input.response_builder.response
+#import requests
+
+#base_url = "https://api.voicemonkey.io/trigger"
+#access_token = "<your_access_token>"
+#secret_token = "<your_secret_token>"
+#monkey = "<your_monkey_id>"
+#announcement = "<your_announcement_text>" # Optional: for announcement
+
+#payload = {
+#    "access_token": access_token,
+#    "secret_token": secret_token,
+#    "monkey": monkey,
+#    "announcement": announcement  # Include if you want to make an announcement
+#}
+
+#try:
+    #response = requests.get(base_url, params=payload)
+requests.get(base_url, params=payload)
+    #response.raise_for_status()  # Raise HTTPError for bad responses (4xx or 5xx)
+    #print("Voice Monkey triggered successfully.")
+#except requests.exceptions.RequestException as e:
+    #print(f"Error triggering Voice Monkey: {e}")
