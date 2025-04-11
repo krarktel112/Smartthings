@@ -4,6 +4,7 @@ from datetime import datetime
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 import SmartThings
+import requests
 
 def read_config_json(file_path):
     try:
@@ -43,24 +44,32 @@ class FileOpenHandler(FileSystemEventHandler):
                             if y == "online":
                                 y == "online"
                             else:
+                                response = requests.get(on)
+                                response.raise_for_status()
                                 ST.execute_scene(ST.scenes['Home']['Ashley1'])
                                 y == "online"
                         if "idle" in last_line:
                             if y == "idle":
                                 y == "idle"
                             else:
+                                response = requests.get(idle)
+                                response.raise_for_status()
                                 ST.execute_scene(ST.scenes['Home']['Ashley2'])
                                 y == "idle"
                         if "dnd" in last_line:
                             if y == "dnd":
                                 y == "dnd"
                             else:
+                                response = requests.get(dnd)
+                                response.raise_for_status()
                                 ST.execute_scene(ST.scenes['Home']['Ashley3'])
                                 y == "dnd"
                         if "offline" in last_line:
                             if y == "offline":
                                 y == "offline"
                             else:
+                                response = requests.get(off)
+                                response.raise_for_status()
                                 ST.execute_scene(ST.scenes['Home']['Ashley4'])
                                 y == "offline"
                         #if "gaming" in last_line:
