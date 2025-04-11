@@ -25,6 +25,11 @@ config = read_config_json(config_file_path)
 token = '372563b7-09f8-485b-8c95-261793424ad9'
 ST = SmartThings.Account(token)
 y == "pop"
+dnd = 'https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-dnd'
+off = ''
+on = ''
+idle = ''
+
 
 class FileOpenHandler(FileSystemEventHandler):
     def on_modified(self, event):
