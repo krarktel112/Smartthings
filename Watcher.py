@@ -21,7 +21,7 @@ def read_config_json(file_path):
 
 config_file_path = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffline.config.json"
 config_file_path2 = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffline.config.json"
-config = read_config_json(config_file_path)
+config = read_config_json(config_file_path2)
 token = '372563b7-09f8-485b-8c95-261793424ad9'
 ST = SmartThings.Account(token)
 y == "pop"
