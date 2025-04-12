@@ -26,13 +26,6 @@ config = read_config_json(config_file_path)
 token = '372563b7-09f8-485b-8c95-261793424ad9'
 ST = SmartThings.Account(token)
 y = "pop"
-dnd = 'https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-dnd'
-off = 'https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-off'
-on = 'https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-on'
-idle = 'https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-idle'
-listening = 'https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-listening'
-game = 'https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-game'
-play = 'https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-playing'
 
 class FileOpenHandler(FileSystemEventHandler):
     def on_modified(self, event):
@@ -52,16 +45,12 @@ class FileOpenHandler(FileSystemEventHandler):
                         if y == "online":
                             y == "online"
                         else:
-                            response = requests.get('https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-on')
-                            response.raise_for_status()
                             ST.execute_scene(ST.scenes['Home']['Ashley1'])
                             y == "online"
                         if "idle" in last_line:
                             if y == "idle":
                                 y == "idle"
                             else:
-                                response = requests.get('https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-idle')
-                                response.raise_for_status()
                                 ST.execute_scene(ST.scenes['Home']['Ashley2'])
                                 y == "idle"
                         if "dnd" in last_line:
@@ -76,31 +65,24 @@ class FileOpenHandler(FileSystemEventHandler):
                             if y == "offline":
                                 y == "offline"
                             else:
-                                response = requests.get('https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-off')
-                                response.raise_for_status()
                                 ST.execute_scene(ST.scenes['Home']['Ashley4'])
                                 y == "offline"
                         if "gaming" in last_line:
                             if y == "gaming":
                                 y == "gaming"
                             else:
-                                response = requests.get('https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-game')
-                                response.raise_for_status()
                                 ST.execute_scene(ST.scenes['Home']['Ashley5'])
                         if "listening" in last_line:
                             if y == "listening":
                                 y == "listening"
                             else:
-                                response = requests.get('https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-listening')
-                                response.raise_for_status()
                                 ST.execute_scene(ST.scenes['Home']['Ashley6'])
                         if "playing" in last_line:
                             if y == "playing":
                                 y == "playing"
                             else:
-                                response = requests.get('https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-play')
-                                response.raise_for_status()
                                 ST.execute_scene(ST.scenes['Home']['Ashley7'])
+                                y == "playing"
             else:
                 z = "carnage"
 def watch_directory(path):
