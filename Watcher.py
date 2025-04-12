@@ -20,7 +20,8 @@ def read_config_json(file_path):
         print(f"An unexpected error occured: {e}")
         return None
 
-config_file_path2 = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffline.config.json"
+config_file_path = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffline.config.json"
+config_file_path2 = "my_text_file"
 config = read_config_json(config_file_path)
 token = '372563b7-09f8-485b-8c95-261793424ad9'
 ST = SmartThings.Account(token)
@@ -44,17 +45,17 @@ class FileOpenHandler(FileSystemEventHandler):
             print(f"File opened: {event.src_path} {timestamp_str} {config}")
             if x == config_file_path2:
                 file_path = 'my_text_file.txt'
-                    with open(file_path, "r") as file:
-                        lines = file.readlines()
-                        last_line = lines[-1]
-                        if "online" in last_line:
-                            if y == "online":
-                                y == "online"
-                            else:
-                                response = requests.get(on)
-                                response.raise_for_status()
-                                ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                                y == "online"
+                with open(file_path, "r") as file:
+                    lines = file.readlines()
+                    last_line = lines[-1]
+                    if "online" in last_line:
+                        if y == "online":
+                            y == "online"
+                        else:
+                            response = requests.get(on)
+                            response.raise_for_status()
+                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
+                            y == "online"
                         if "idle" in last_line:
                             if y == "idle":
                                 y == "idle"
