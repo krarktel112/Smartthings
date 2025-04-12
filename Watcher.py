@@ -29,7 +29,9 @@ dnd = 'https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e
 off = 'https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-off'
 on = 'https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-on'
 idle = 'https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-idle'
-
+listening = 'https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-listening'
+game = 'https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-game'
+play = 'https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-playing'
 
 class FileOpenHandler(FileSystemEventHandler):
     def on_modified(self, event):
@@ -77,14 +79,29 @@ class FileOpenHandler(FileSystemEventHandler):
                                 response.raise_for_status()
                                 ST.execute_scene(ST.scenes['Home']['Ashley4'])
                                 y == "offline"
-                        #if "gaming" in last_line:
-                            #ST.execute_scene(ST.scenes['Home']['Ashley5'])
-                        #if "listening" in last_line:
-                            #ST.execute_scene(ST.scenes['Home']['Ashley5'])
-                        #if "playing" in last_line:
-                            #ST.execute_scene(ST.scenes['Home']['Ashley5'])
+                        if "gaming" in last_line:
+                            if y == "gaming":
+                                y == "gaming"
+                            else:
+                                response = requests.get(off)
+                                response.raise_for_status()
+                                ST.execute_scene(ST.scenes['Home']['Ashley5'])
+                        if "listening" in last_line:
+                            if y == "listening":
+                                y == "listening"
+                            else:
+                                response = requests.get(listening)
+                                response.raise_for_status()
+                                ST.execute_scene(ST.scenes['Home']['Ashley6'])
+                        if "playing" in last_line:
+                            if y == "playing":
+                                y == "playing"
+                            else:
+                                response = requests.get(play)
+                                response.raise_for_status()
+                                ST.execute_scene(ST.scenes['Home']['Ashley7'])
             else:
-                ST.execute_scene(ST.scenes['Home']['Ashley4'])
+                print("none")
 def watch_directory(path):
     observer = Observer()
     event_handler = FileOpenHandler()
