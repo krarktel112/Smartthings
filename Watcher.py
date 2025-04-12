@@ -36,15 +36,15 @@ class FileOpenHandler(FileSystemEventHandler):
             print(f"File opened: {event.src_path} {timestamp_str} {config}")
             if x == config_file_path2:
                 file_path = 'my_text_file.txt'
-                    with open(file_path, "r") as file:
-                        lines = file.readlines()
-                        last_line = lines[-1]
-                        if "online" in last_line:
-                            if y == "online":
-                                y == "online"
-                            else:
-                                ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                                y == "online"
+                with open(file_path, "r") as file:
+                    lines = file.readlines()
+                    last_line = lines[-1]
+                    if "online" in last_line:
+                        if y == "online":
+                            y == "online"
+                        else:
+                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
+                            y == "online"
                         if "idle" in last_line:
                             if y == "idle":
                                 y == "idle"
