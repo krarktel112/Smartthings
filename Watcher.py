@@ -52,7 +52,7 @@ class FileOpenHandler(FileSystemEventHandler):
                         if y == "online":
                             y == "online"
                         else:
-                            response = requests.get(on)
+                            response = requests.get('https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-on')
                             response.raise_for_status()
                             ST.execute_scene(ST.scenes['Home']['Ashley1'])
                             y == "online"
@@ -60,7 +60,7 @@ class FileOpenHandler(FileSystemEventHandler):
                             if y == "idle":
                                 y == "idle"
                             else:
-                                response = requests.get(idle)
+                                response = requests.get('https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-idle')
                                 response.raise_for_status()
                                 ST.execute_scene(ST.scenes['Home']['Ashley2'])
                                 y == "idle"
@@ -68,7 +68,7 @@ class FileOpenHandler(FileSystemEventHandler):
                             if y == "dnd":
                                 y == "dnd"
                             else:
-                                response = requests.get(dnd)
+                                response = requests.get('https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-dnd')
                                 response.raise_for_status()
                                 ST.execute_scene(ST.scenes['Home']['Ashley3'])
                                 y == "dnd"
@@ -76,7 +76,7 @@ class FileOpenHandler(FileSystemEventHandler):
                             if y == "offline":
                                 y == "offline"
                             else:
-                                response = requests.get(off)
+                                response = requests.get('https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-off')
                                 response.raise_for_status()
                                 ST.execute_scene(ST.scenes['Home']['Ashley4'])
                                 y == "offline"
@@ -84,25 +84,25 @@ class FileOpenHandler(FileSystemEventHandler):
                             if y == "gaming":
                                 y == "gaming"
                             else:
-                                response = requests.get(off)
+                                response = requests.get('https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-game')
                                 response.raise_for_status()
                                 ST.execute_scene(ST.scenes['Home']['Ashley5'])
                         if "listening" in last_line:
                             if y == "listening":
                                 y == "listening"
                             else:
-                                response = requests.get(listening)
+                                response = requests.get('https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-listening')
                                 response.raise_for_status()
                                 ST.execute_scene(ST.scenes['Home']['Ashley6'])
                         if "playing" in last_line:
                             if y == "playing":
                                 y == "playing"
                             else:
-                                response = requests.get(play)
+                                response = requests.get('https://api-v2.voicemonkey.io/trigger?token=b2ca9b305243e72ddc48196c3059e232_ed99b6d5eeeeb967306f6d3d703ecda2&device=ashley-play')
                                 response.raise_for_status()
                                 ST.execute_scene(ST.scenes['Home']['Ashley7'])
             else:
-                print("none")
+                z = "carnage"
 def watch_directory(path):
     observer = Observer()
     event_handler = FileOpenHandler()
