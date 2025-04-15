@@ -75,7 +75,6 @@ class FileOpenHandler(FileSystemEventHandler):
                                 ST.execute_scene(ST.scenes['Home']['Ashley5'])
                                 y == "gaming"
                                 print(f"Korra: {timestamp_str} {config}\n")
-                            else:
                         if "listening" in last_line:
                             if y == "listening":
                                 y == "listening"
