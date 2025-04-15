@@ -28,13 +28,13 @@ class FileOpenHandler(FileSystemEventHandler):
 	def on_modified(self, event):
 		if not event.is_directory:
 			now = datetime.now()
-            timestamp = datetime.timestamp(now)
-            timestamp_str = now.strftime("%Y-%m-%d %H:%M:%S")
-            config = read_config_json(config_file_path)
-            x = event.src_path
-            #print(f"File opened: {event.src_path} {timestamp_str} {config}")
-            if x == config_file_path2:
-                file_path = 'my_text_file.txt'
+			timestamp = datetime.timestamp(now)
+			timestamp_str = now.strftime("%Y-%m-%d %H:%M:%S")
+			config = read_config_json(config_file_path)
+			x = event.src_path
+			#print(f"File opened: {event.src_path} {timestamp_str} {config}")
+		if x == config_file_path2:
+                	file_path = 'my_text_file.txt'
                 with open(file_path, 'a') as file:
 			file.write(f"Korra: {timestamp_str} {config}\n")
                 with open(file_path, "r") as file:
@@ -91,17 +91,17 @@ class FileOpenHandler(FileSystemEventHandler):
 					print(f"Korra: {y} {timestamp_str}")
 			
 def watch_directory(path):
-    observer = Observer()
-    event_handler = FileOpenHandler()
-    observer.schedule(event_handler, path, recursive=False)
-    observer.start()
-    try:
-        while True:
-            time.sleep(1)
-    except KeyboardInterrupt:
-        observer.stop()
-    observer.join()
+	observer = Observer()
+	event_handler = FileOpenHandler()
+	observer.schedule(event_handler, path, recursive=False)
+	observer.start()
+	try:
+		while True:
+			time.sleep(1)
+	except KeyboardInterrupt:
+		observer.stop()
+		observer.join()
 
 if __name__ == "__main__":
-    path_to_watch = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins"  # Replace with the directory you want to watch
-    watch_directory(path_to_watch)
+	path_to_watch = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins"  # Replace with the directory you want to watch
+	watch_directory(path_to_watch)
