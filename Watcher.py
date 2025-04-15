@@ -36,60 +36,60 @@ class FileOpenHandler(FileSystemEventHandler):
                 file_path = 'my_text_file.txt'
                 with open(file_path, 'a') as file:
                     file.write(f"Korra: {timestamp_str} {config}\n")
-                    with open(file_path, "r") as file:
-                        lines = file.readlines()
+                with open(file_path, "r") as file:
+			lines = file.readlines()
                         last_line = lines[-1]
                         if "online" in last_line:
-                            if y == "online":
-                                y == "online"
-				print(f"Korra: {y} {timestamp_str}")
-                            else:
-                                ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                                y == "online"
+				if y == "online":
+					y == "online"
+                            	else:
+					ST.execute_scene(ST.scenes['Home']['Ashley1'])
+					y == "online"
+					print(f"Korra: {y} {timestamp_str}")
                         if "idle" in last_line:
-                            if y == "idle":
-                                y == "idle"
-                            else:
-                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
-                                y == "idle"
-				print(f"Korra: {y} {timestamp_str}")
+				if y == "idle":
+					y == "idle"
+                            	else:
+                                	ST.execute_scene(ST.scenes['Home']['Ashley2'])
+                                	y == "idle"
+					print(f"Korra: {y} {timestamp_str}")
                         if "dnd" in last_line:
-                            if y == "dnd":
-                                y == "dnd"
-                            else:
-                                ST.execute_scene(ST.scenes['Home']['Ashley3'])
-                                y == "dnd"
-				print(f"Korra: {y} {timestamp_str}")
+                        	if y == "dnd":
+                        		y == "dnd"
+                            	else:
+                                	ST.execute_scene(ST.scenes['Home']['Ashley3'])
+                                	y == "dnd"
+					print(f"Korra: {y} {timestamp_str}")
                         if "offline" in last_line:
-                            if y == "offline":
-                                y == "offline"
-                            else:
-                                ST.execute_scene(ST.scenes['Home']['Ashley4'])
-                                y == "offline"
-				print(f"Korra: {y} {timestamp_str}")
+                            	if y == "offline":
+                                	y == "offline"
+                            	else:
+                                	ST.execute_scene(ST.scenes['Home']['Ashley4'])
+                                	y == "offline"
+					print(f"Korra: {y} {timestamp_str}")
                         if "gaming" in last_line:
-                            if y == "gaming":
-                                y == "gaming"                            
-                            else:
-                                y == "gaming"
-                                ST.execute_scene(ST.scenes['Home']['Ashley5'])
-				print(f"Korra: {y} {timestamp_str}")
+                            	if y == "gaming":
+                                	y == "gaming"                            
+                            	else:
+                                	y == "gaming"
+                                	ST.execute_scene(ST.scenes['Home']['Ashley5'])
+					print(f"Korra: {y} {timestamp_str}")
                         if "listening" in last_line:
-                            if y == "listening":
-                                y == "listening"
-                            else:
-                                y == "listening"
-                                ST.execute_scene(ST.scenes['Home']['Ashley6'])
-				print(f"Korra: {y} {timestamp_str}")
+                            	if y == "listening":
+                                	y == "listening"
+                            	else:
+                                	y == "listening"
+                                	ST.execute_scene(ST.scenes['Home']['Ashley6'])
+					print(f"Korra: {y} {timestamp_str}")
                         if "playing" in last_line:
-                            if y == "playing":
-                                y == "playing"
-                            else:
-                                y == "playing"
-                                ST.execute_scene(ST.scenes['Home']['Ashley7'])
-				print(f"Korra: {y} {timestamp_str}")
+                            	if y == "playing":
+                                	y == "playing"
+                            	else:
+                                	y == "playing"
+                                	ST.execute_scene(ST.scenes['Home']['Ashley7'])
+					print(f"Korra: {y} {timestamp_str}")
             else:
-                y = "pop"
+		    y = "pop"
 def watch_directory(path):
     observer = Observer()
     event_handler = FileOpenHandler()
