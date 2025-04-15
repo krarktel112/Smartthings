@@ -24,6 +24,7 @@ config_file_path2 = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffli
 config = read_config_json(config_file_path)
 token = '372563b7-09f8-485b-8c95-261793424ad9'
 ST = SmartThings.Account(token)
+y = "pop"
 
 class FileOpenHandler(FileSystemEventHandler):
     def on_modified(self, event):
@@ -38,60 +39,58 @@ class FileOpenHandler(FileSystemEventHandler):
                 file_path = 'my_text_file.txt'
                 with open(file_path, 'a') as file:
                     file.write(f"Korra: {timestamp_str} {config}\n")
-                    with open(file_path, "r") as file:
-                        lines = file.readlines()
-                        last_line = lines[-1]
-                        if "online" in last_line:
-                            if y == "online":
-                                y == "online"
-                            else:
-                                ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                                y == "online"
-                                print(f"Korra: {timestamp_str} {config}\n")
-                        if "idle" in last_line:
-                            if y == "idle":
-                                y == "idle"
-                            else:
-                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
-                                y == "idle"
-                                print(f"Korra: {timestamp_str} {config}\n")
-                        if "dnd" in last_line:
-                            if y == "dnd":
-                                y == "dnd"
-                            else:
-                                ST.execute_scene(ST.scenes['Home']['Ashley3'])
-                                y == "dnd"
-                                print(f"Korra: {timestamp_str} {config}\n")
-                        if "offline" in last_line:
-                            if y == "offline":
-                                y == "offline"
-                            else:
-                                ST.execute_scene(ST.scenes['Home']['Ashley4'])
-                                y == "offline"
-                                print(f"Korra: {timestamp_str} {config}\n")
-                        if "gaming" in last_line:
-                            if y == "gaming":
-                                y == "gaming"
-                            else:
-                                ST.execute_scene(ST.scenes['Home']['Ashley5'])
-                                y == "gaming"
-                                print(f"Korra: {timestamp_str} {config}\n")
-                        if "listening" in last_line:
-                            if y == "listening":
-                                y == "listening"
-                            else:
-                                ST.execute_scene(ST.scenes['Home']['Ashley6'])
-                                y == "listening"
-                                print(f"Korra: {timestamp_str} {config}\n")
-                        if "playing" in last_line:
-                            if y == "playing":
-                                y == "playing"
-                            else:
-                                ST.execute_scene(ST.scenes['Home']['Ashley7'])
-                                y == "playing"
-                                print(f"Korra: {timestamp_str} {config}\n")
-            else:
-                ST.execute_scene(ST.scenes['Home']['Ashley5'])
+                with open(file_path, "r") as file:
+                    lines = file.readlines()
+                    last_line = lines[-1]
+                    if "online" in last_line:
+                        if y == "online":
+                            y == "online"
+                        else:
+                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
+                            y == "online"
+                            print(f"Korra: {timestamp_str} {config}\n")
+                    if "idle" in last_line:
+                        if y == "idle":
+                            y == "idle"
+                        else:
+                            ST.execute_scene(ST.scenes['Home']['Ashley2'])
+                            y == "idle"
+                            print(f"Korra: {timestamp_str} {config}\n")
+                    if "dnd" in last_line:
+                        if y == "dnd":
+                            y == "dnd"
+                        else:
+                            ST.execute_scene(ST.scenes['Home']['Ashley3'])
+                            y == "dnd"
+                            print(f"Korra: {timestamp_str} {config}\n")
+                    if "offline" in last_line:
+                        if y == "offline":
+                            y == "offline"
+                        else:
+                            ST.execute_scene(ST.scenes['Home']['Ashley4'])
+                            y == "offline"
+                            print(f"Korra: {timestamp_str} {config}\n")
+                    if "gaming" in last_line:
+                        if y == "gaming":
+                            y == "gaming"
+                        else:
+                            ST.execute_scene(ST.scenes['Home']['Ashley5'])
+                            y == "gaming"
+                            print(f"Korra: {timestamp_str} {config}\n")
+                    if "listening" in last_line:
+                        if y == "listening":
+                            y == "listening"
+                        else:
+                            ST.execute_scene(ST.scenes['Home']['Ashley6'])
+                            y == "listening"
+                            print(f"Korra: {timestamp_str} {config}\n")
+                    if "playing" in last_line:
+                        if y == "playing":
+                            y == "playing"
+                        else:
+                            ST.execute_scene(ST.scenes['Home']['Ashley7'])
+                            y == "playing"
+                            print(f"Korra: {timestamp_str} {config}\n")
 
 def watch_directory(path):
     observer = Observer()
