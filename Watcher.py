@@ -1,9 +1,7 @@
-import time
-import json
+import time, json, SmartThings 
 from datetime import datetime
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
-import SmartThings
 
 def read_config_json(file_path):
     try:
@@ -24,7 +22,7 @@ config_file_path2 = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffli
 config = read_config_json(config_file_path2)
 token = '372563b7-09f8-485b-8c95-261793424ad9'
 ST = SmartThings.Account(token)
-y == "pop"
+y = "pop"
 
 class FileOpenHandler(FileSystemEventHandler):
     def on_modified(self, event):
@@ -34,7 +32,7 @@ class FileOpenHandler(FileSystemEventHandler):
             timestamp_str = now.strftime("%Y-%m-%d %H:%M:%S")
             config = read_config_json(config_file_path)
             x = event.src_path
-            print(f"File opened: {event.src_path} {timestamp_str} {config}")
+            #print(f"File opened: {event.src_path} {timestamp_str} {config}")
             if x == config_file_path2:
                 file_path = 'my_text_file.txt'
                 with open(file_path, "r") as file:
@@ -46,24 +44,25 @@ class FileOpenHandler(FileSystemEventHandler):
                         else:
                             ST.execute_scene(ST.scenes['Home']['Ashley1'])
                             y == "online"
-                        if "idle" in last_line:
-                            if y == "idle":
-                                y == "idle"
-                            else:
-                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
-                                y == "idle"
-                        if "dnd" in last_line:
-                            if y == "dnd":
-                                y == "dnd"
-                            else:
-                                ST.execute_scene(ST.scenes['Home']['Ashley3'])
-                                y == "dnd"
-                        if "offline" in last_line:
-                            if y == "offline":
-                                y == "offline"
-                            else:
-                                ST.execute_scene(ST.scenes['Home']['Ashley4'])
-                                y == "offline"
+                            print(f"Korra: {y} {timestamp_str}")
+                    if "idle" in last_line:
+                        if y == "idle":
+                            y == "idle"
+                        else:
+                            ST.execute_scene(ST.scenes['Home']['Ashley2'])
+                            y == "idle"
+                    if "dnd" in last_line:
+                        if y == "dnd":
+                            y == "dnd"
+                        else:
+                            ST.execute_scene(ST.scenes['Home']['Ashley3'])
+                            y == "dnd"
+                    if "offline" in last_line:
+                        if y == "offline":
+                            y == "offline"
+                        else:
+                            ST.execute_scene(ST.scenes['Home']['Ashley4'])
+                            y == "offline"
                         #if "gaming" in last_line:
                             #ST.execute_scene(ST.scenes['Home']['Ashley5'])
                         #if "listening" in last_line:
