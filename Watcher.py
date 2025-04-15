@@ -49,22 +49,30 @@ class FileOpenHandler(FileSystemEventHandler):
                         if y == "idle":
                             y == "idle"
                         else:
+                            print(f"Korra: {y} {timestamp_str}")
                             ST.execute_scene(ST.scenes['Home']['Ashley2'])
                             y == "idle"
+                            print(f"Korra: {y} {timestamp_str}")
                     if "dnd" in last_line:
                         if y == "dnd":
                             y == "dnd"
                         else:
                             ST.execute_scene(ST.scenes['Home']['Ashley3'])
                             y == "dnd"
+                            print(f"Korra: {y} {timestamp_str}")
                     if "offline" in last_line:
                         if y == "offline":
                             y == "offline"
                         else:
                             ST.execute_scene(ST.scenes['Home']['Ashley4'])
                             y == "offline"
-                        #if "gaming" in last_line:
-                            #ST.execute_scene(ST.scenes['Home']['Ashley5'])
+                    if "gaming" in last_line:
+                        if y == "gaming":
+                            y == "gaming"
+                        else:
+                            ST.execute_scene(ST.scenes['Home']['Ashley5'])
+                            y =="gaming"
+                            print(f"Korra: {y} {timestamp_str}")
                         #if "listening" in last_line:
                             #ST.execute_scene(ST.scenes['Home']['Ashley5'])
                         #if "playing" in last_line:
