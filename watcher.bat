@@ -1,2 +1,2 @@
 @echo off
-start powershell.exe -NoExit -Command "python path\to\Smartthings\Watcher.py"
+start powershell.exe -NoExit -Command "python \Smartthings\Watcher.py"
