@@ -1,2 +1,1 @@
-start powershell
-powershell -Command "cd C:\Users\User\Smartthings"
+powershell.exe -Command "python3 Watcher.py"
