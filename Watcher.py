@@ -46,14 +46,20 @@ class FileOpenHandler(FileSystemEventHandler):
                         if y == "online":
                             y == "online"
                         else:
-                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
+                            try:
+                                ST.execute_scene(ST.scenes['Home']['Ashley1'])
+                            except:
+                                print("Error")
                             y == "online"
                             print(f"Korra: {timestamp_str} {config}\n")
                     if "idle" in last_line:
                         if y == "idle":
                             y == "idle"
                         else:
-                            ST.execute_scene(ST.scenes['Home']['Ashley2'])
+                            try:
+                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
+                            except:
+                                print("Error")
                             y == "idle"
                             print(f"Korra: {timestamp_str} {config}\n")
                     if "dnd" in last_line:
