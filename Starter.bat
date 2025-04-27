@@ -1,1 +1,1 @@
-powershell -Command "python3 Watcher.py"
+powershell -NoExit -Command "python3 Watcher.py"
