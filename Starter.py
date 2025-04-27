@@ -2,7 +2,7 @@ import subprocess
 
 def open_powershell():
     try:
-        subprocess.run(["powershell.exe"])
+        subprocess.run(["C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"])
         print("PowerShell opened successfully.")
     except subprocess.CalledProcessError as e:
         print(f"Error opening PowerShell: {e}")
