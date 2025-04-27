@@ -1,2 +1,2 @@
 start powershell
-powershell -NoExit -File "path\to\your\script.ps1"
+powershell -NoExit -File "C:\Users\User\Smartthings.py"
