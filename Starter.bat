@@ -1,4 +1,4 @@
 
-powershell.exe -Command "Write-Host 'Hello from PowerShell!'; Get-Date"
+powershell -Command "Write-Host 'Hello from PowerShell!'; Get-Date"
 echo Done!
 pause
