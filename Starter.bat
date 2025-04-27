@@ -1,1 +1,1 @@
-powershell -NoExit -File "C:\Users\User\Smartthings.py"
+powershell -NoExit -Command "cd C:\Users\User\Smartthings.py"
