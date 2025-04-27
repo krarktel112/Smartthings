@@ -1,4 +1,1 @@
-
-powershell -NoExit -Command "Write-Host 'Hello from PowerShell!'; Get-Date"
-echo Done!
-pause
+powershell -NoExit -Command " 'Hello from PowerShell!'; Get-Date"
