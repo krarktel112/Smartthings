@@ -1,1 +1,1 @@
-powershell.exe -Command "python3 Watcher.py"
+powershell -Command "python3 Watcher.py"
