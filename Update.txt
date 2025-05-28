@@ -8,3 +8,13 @@
 											BdApi.Data.save("Aoffline", "settings", mySettings);
 										}
 									}
+											const mySettings = {
+												setting1: BdApi.Webpack.getStore("PresenceStore").getStatus('450867169581072394')
+											}
+											const mySettings1 = {
+												setting1: timeLogList
+											}
+											BdApi.Data.save("Aonline", "settings", mySettings1);
+											BdApi.Data.save("Aoffline", "settings", mySettings);
+										}
+									}
