@@ -113,7 +113,6 @@ class FileOpenHandler(FileSystemEventHandler):
                                 print("Error")
                             y == "playing"
                             print(f"Korra: {timestamp_str} {config}\n")
-                hi
 
 def watch_directory(path):
     observer = Observer()
