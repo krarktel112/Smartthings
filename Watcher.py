@@ -113,7 +113,7 @@ class FileOpenHandler(FileSystemEventHandler):
                                 print("Error")
                             y == "playing"
                             print(f"Korra: {timestamp_str} {config}\n")
-            if x == config_file_path2:
+            if x == config_file_path3:
                 file_path = 'my_text_file.txt'
                 with open(file_path, 'a') as file:
                     file.write(f"Korra: {timestamp_str} {config}\n")
@@ -190,7 +190,7 @@ class FileOpenHandler(FileSystemEventHandler):
                                 print("Error")
                             y == "playing"
                             print(f"Korra: {timestamp_str} {config}\n")
-            if x == config_file_path2:
+            if x == config_file_path4:
                 file_path = 'my_text_file.txt'
                 with open(file_path, 'a') as file:
                     file.write(f"Korra: {timestamp_str} {config}\n")
@@ -267,7 +267,7 @@ class FileOpenHandler(FileSystemEventHandler):
                                 print("Error")
                             y == "playing"
                             print(f"Korra: {timestamp_str} {config}\n")
-            if x == config_file_path2:
+            if x == config_file_path5:
                 file_path = 'my_text_file.txt'
                 with open(file_path, 'a') as file:
                     file.write(f"Korra: {timestamp_str} {config}\n")
