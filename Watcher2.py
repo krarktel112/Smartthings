@@ -36,7 +36,7 @@ class FileOpenHandler(FileSystemEventHandler):
             x = event.src_path
             #print(f"File opened: {event.src_path} {timestamp_str} {config}")
             if x == config_file_path2:
-                file_path = 'my_text_file.txt'
+                file_path = 'Emma.txt'
                 with open(file_path, 'a') as file:
                     file.write(f"Korra: {timestamp_str} {config}\n")
                 with open(file_path, "r") as file:
@@ -47,70 +47,70 @@ class FileOpenHandler(FileSystemEventHandler):
                             y == "online"
                         else:
                             try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley1'])
+                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
                             except:
                                 print("Error")
                             y == "online"
                             print(f"Korra: {timestamp_str} {config}\n")
                     if "idle" in last_line:
-                        if y == "idle":
-                            y == "idle"
+                        if y == "online":
+                            y == "online"
                         else:
                             try:
                                 ST.execute_scene(ST.scenes['Home']['Ashley2'])
                             except:
                                 print("Error")
-                            y == "idle"
+                            y == "online"
                             print(f"Korra: {timestamp_str} {config}\n")
                     if "dnd" in last_line:
-                        if y == "dnd":
-                            y == "dnd"
+                        if y == "online":
+                            y == "online"
                         else:
                             try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley3'])
+                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
                             except:
                                 print("Error")
-                            y == "dnd"
+                            y == "online"
                             print(f"Korra: {timestamp_str} {config}\n")
                     if "offline" in last_line:
                         if y == "offline":
                             y == "offline"
                         else:
                             try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley4'])
+                                ST.execute_scene(ST.scenes['Home']['Ashley3'])
                             except:
                                 print("Error")
                             y == "offline"
                             print(f"Korra: {timestamp_str} {config}\n")
                     if "gaming" in last_line:
-                        if y == "gaming":
-                            y == "gaming"
+                        if y == "online":
+                            y == "online"
                         else:
                             try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley5'])
+                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
                             except:
                                 print("Error")
-                            y == "gaming"
+                            y == "online"
                             print(f"Korra: {timestamp_str} {config}\n")
                     if "listening" in last_line:
-                        if y == "listening":
-                            y == "listening"
+                        if y == "online":
+                            y == "online"
                         else:
                             try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley6'])
+                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
                             except:
                                 print("Error")
-                            y == "listening"
+                            y == "online"
                             print(f"Korra: {timestamp_str} {config}\n")
                     if "playing" in last_line:
-                        if y == "playing":
-                            y == "playing"
+                        if y == "online":
+                            y == "online"
                         else:
                             try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley7'])
+                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
                             except:
                                 print("Error")
-                            y == "playing"
+                            y == "online"
                             print(f"Korra: {timestamp_str} {config}\n")
 
 def watch_directory(path):
