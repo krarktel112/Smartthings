@@ -116,7 +116,7 @@ class FileOpenHandler(FileSystemEventHandler):
                                 print("Error")
                             y == "online"
                             print(f"Korra: {timestamp_str} {config}\n")
-            if x == config_file_path3:
+            elif x == config_file_path3:
                 file_path = 'Emma.txt'
                 with open(file_path, 'a') as file:
                     file.write(f"Korra: {timestamp_str} {config}\n")
