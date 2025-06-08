@@ -21,17 +21,10 @@ def read_config_json(file_path):
 
 config_file_path = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffline.config.json"
 config_file_path2 = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Aoffline.config.json"
-config_file_path3 = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Emma.config.json"
-config_file_path4 = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Asterea.config.json"
-config_file_path5 = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\Elizia.config.json"
-
 config = read_config_json(config_file_path)
 token = '372563b7-09f8-485b-8c95-261793424ad9'
 ST = SmartThings.Account(token)
-a = "pop"
-b = "pop"
 y = "pop"
-z = "pop"
 
 class FileOpenHandler(FileSystemEventHandler):
     def on_modified(self, event):
@@ -53,303 +46,52 @@ class FileOpenHandler(FileSystemEventHandler):
                         if y == "online":
                             y == "online"
                         else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                            except:
-                                print("Error")
+                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
                             y == "online"
-                            print(f"Korra: {timestamp_str} online\n")
+                            print(f"Korra: {timestamp_str} {config}\n")
                     if "idle" in last_line:
-                        if y == "online":
-                            y == "online"
+                        if y == "idle":
+                            y == "idle"
                         else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                            except:
-                                print("Error")
-                            y == "online"
-                            print(f"Korra: {timestamp_str} online\n")
+                            ST.execute_scene(ST.scenes['Home']['Ashley2'])
+                            y == "idle"
+                            print(f"Korra: {timestamp_str} {config}\n")
                     if "dnd" in last_line:
-                        if y == "online":
-                            y == "online"
+                        if y == "dnd":
+                            y == "dnd"
                         else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                            except:
-                                print("Error")
-                            y == "online"
-                            print(f"Korra: {timestamp_str} online\n")
+                            ST.execute_scene(ST.scenes['Home']['Ashley3'])
+                            y == "dnd"
+                            print(f"Korra: {timestamp_str} {config}\n")
                     if "offline" in last_line:
                         if y == "offline":
                             y == "offline"
                         else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley4'])
-                            except:
-                                print("Error")
+                            ST.execute_scene(ST.scenes['Home']['Ashley4'])
                             y == "offline"
-                            print(f"Korra: {timestamp_str} offline\n")
+                            print(f"Korra: {timestamp_str} {config}\n")
                     if "gaming" in last_line:
-                        if y == "online":
-                            y == "online"
+                        if y == "gaming":
+                            y == "gaming"
                         else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                            except:
-                                print("Error")
-                            y == "onlin"
-                            print(f"Korra: {timestamp_str} online\n")
+                            ST.execute_scene(ST.scenes['Home']['Ashley5'])
+                            y == "gaming"
+                            print(f"Korra: {timestamp_str} {config}\n")
                     if "listening" in last_line:
-                        if y == "online":
-                            y == "online"
+                        if y == "listening":
+                            y == "listening"
                         else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                            except:
-                                print("Error")
-                            y == "online"
-                            print(f"Korra: {timestamp_str} online\n")
+                            ST.execute_scene(ST.scenes['Home']['Ashley6'])
+                            y == "listening"
+                            print(f"Korra: {timestamp_str} {config}\n")
                     if "playing" in last_line:
-                        if y == "online":
-                            y == "online"
+                        if y == "playing":
+                            y == "playing"
                         else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                            except:
-                                print("Error")
-                            y == "online"
-                            print(f"Korra: {timestamp_str} online\n")
-            elif x == config_file_path3:
-                file_path = 'Emma.txt'
-                with open(file_path, 'a') as file:
-                    file.write(f"Korra: {timestamp_str} offline\n")
-                with open(file_path, "r") as file:
-                    lines = file.readlines()
-                    last_line = lines[-1]
-                    if "online" in last_line:
-                        if z == "online":
-                            z == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
-                            except:
-                                print("Error")
-                            z == "online"
-                            print(f"Emma: {timestamp_str} online\n")
-                    if "idle" in last_line:
-                        if z == "online":
-                            z == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
-                            except:
-                                print("Error")
-                            z == "online"
-                            print(f"Emma: {timestamp_str} online\n")
-                    if "dnd" in last_line:
-                        if z == "online":
-                            z == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
-                            except:
-                                print("Error")
-                            z == "online"
-                            print(f"Emma: {timestamp_str} online\n")
-                    if "offline" in last_line:
-                        if z == "offline":
-                            z == "offline"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley3'])
-                            except:
-                                print("Error")
-                            z == "offline"
-                            print(f"Emma: {timestamp_str} offline\n")
-                    if "gaming" in last_line:
-                        if z == "online":
-                            z == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
-                            except:
-                                print("Error")
-                            z == "online"
-                            print(f"Emma: {timestamp_str} online\n")
-                    if "listening" in last_line:
-                        if z == "online":
-                            z == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
-                            except:
-                                print("Error")
-                            y == "online"
-                            print(f"Emma: {timestamp_str} online\n")
-                    if "playing" in last_line:
-                        if z == "online":
-                            z == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
-                            except:
-                                print("Error")
-                            z == "online"
-                            print(f"Emma: {timestamp_str} online\n")
-            elif x == config_file_path5:
-                file_path = 'Elizia.txt'
-                with open(file_path, 'a') as file:
-                    file.write(f"Elizia: {timestamp_str} {config}\n")
-                with open(file_path, "r") as file:
-                    lines = file.readlines()
-                    last_line = lines[-1]
-                    if "online" in last_line:
-                        if a == "online":
-                            a == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley5'])
-                            except:
-                                print("Error")
-                            a == "online"
-                            print(f"Elizia: {timestamp_str} {config}\n")
-                    if "idle" in last_line:
-                        if a == "online":
-                            a == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley5'])
-                            except:
-                                print("Error")
-                            a == "online"
-                            print(f"Elizia: {timestamp_str} {config}\n")
-                    if "dnd" in last_line:
-                        if y == "online":
-                            y == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley5'])
-                            except:
-                                print("Error")
-                            y == "online"
-                            print(f"Elizia: {timestamp_str} {config}\n")
-                    if "offline" in last_line:
-                        if a == "offline":
-                            a == "offline"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley6'])
-                            except:
-                                print("Error")
-                            a == "offline"
-                            print(f"Elizia: {timestamp_str} {config}\n")
-                    if "gaming" in last_line:
-                        if a == "online":
-                            a == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley5'])
-                            except:
-                                print("Error")
-                            a == "online"
-                            print(f"Elizia: {timestamp_str} {config}\n")
-                    if "listening" in last_line:
-                        if a == "online":
-                            a == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley5'])
-                            except:
-                                print("Error")
-                            a == "online"
-                            print(f"Elizia: {timestamp_str} {config}\n")
-                    if "playing" in last_line:
-                        if a == "online":
-                            a == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley5'])
-                            except:
-                                print("Error")
-                            a == "online"
-                            print(f"Elizia: {timestamp_str} {config}\n")
-            elif x == config_file_path4:
-                file_path = 'Asterea.txt'
-                with open(file_path, 'a') as file:
-                    file.write(f"Asterea: {timestamp_str} {config}\n")
-                with open(file_path, "r") as file:
-                    lines = file.readlines()
-                    last_line = lines[-1]
-                    if "online" in last_line:
-                        if b == "online":
-                            b == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
-                            except:
-                                print("Error")
-                            b == "online"
-                            print(f"Asterea: {timestamp_str} {config}\n")
-                    if "idle" in last_line:
-                        if b == "online":
-                            b == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
-                            except:
-                                print("Error")
-                            a == "online"
-                            print(f"Asterea: {timestamp_str} {config}\n")
-                    if "dnd" in last_line:
-                        if b == "online":
-                            b == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
-                            except:
-                                print("Error")
-                            b == "online"
-                            print(f"Asterea: {timestamp_str} {config}\n")
-                    if "offline" in last_line:
-                        if b == "offline":
-                            b == "offline"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley3'])
-                            except:
-                                print("Error")
-                            b == "offline"
-                            print(f"Asterea: {timestamp_str} {config}\n")
-                    if "gaming" in last_line:
-                        if b == "online":
-                            b == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
-                            except:
-                                print("Error")
-                            b == "online"
-                            print(f"Asterea: {timestamp_str} {config}\n")
-                    if "listening" in last_line:
-                        if b == "online":
-                            b == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
-                            except:
-                                print("Error")
-                            b == "online"
-                            print(f"Asterea: {timestamp_str} {config}\n")
-                    if "playing" in last_line:
-                        if b == "online":
-                            b == "online"
-                        else:
-                            try:
-                                ST.execute_scene(ST.scenes['Home']['Ashley2'])
-                            except:
-                                print("Error")
-                            b == "online"
-                            print(f"Asterea: {timestamp_str} {config}\n")
+                            ST.execute_scene(ST.scenes['Home']['Ashley7'])
+                            y == "playing"
+                            print(f"Korra: {timestamp_str} {config}\n")
+
 def watch_directory(path):
     observer = Observer()
     event_handler = FileOpenHandler()
