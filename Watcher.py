@@ -34,11 +34,12 @@ class FileOpenHandler(FileSystemEventHandler):
             timestamp_str = now.strftime("%Y-%m-%d %H:%M:%S")
             config = read_config_json(config_file_path)
             x = event.src_path
+            user = "Korra"
             #print(f"File opened: {event.src_path} {timestamp_str} {config}")
             if x == config_file_path2:
                 file_path = 'my_text_file.txt'
                 with open(file_path, 'a') as file:
-                    file.write(f"Korra: {timestamp_str} {config}\n")
+                    file.write(f"{user}: {timestamp_str} {config}\n")
                 with open(file_path, "r") as file:
                     lines = file.readlines()
                     last_line = lines[-1]
@@ -48,49 +49,49 @@ class FileOpenHandler(FileSystemEventHandler):
                         else:
                             ST.execute_scene(ST.scenes['Home']['Ashley1'])
                             y == "online"
-                            print(f"Korra: {timestamp_str} online\n")
+                            print(f"{user}: {timestamp_str} online\n")
                     if "idle" in last_line:
                         if y == "online":
                             y == "online"
                         else:
-                            ST.execute_scene(ST.scenes['Home']['Ashley2'])
+                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
                             y == "online"
-                            print(f"Korra: {timestamp_str} online\n")
+                            print(f"{user}: {timestamp_str} online\n")
                     if "dnd" in last_line:
                         if y == "online":
                             y == "online"
                         else:
-                            ST.execute_scene(ST.scenes['Home']['Ashley3'])
+                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
                             y == "online"
-                            print(f"Korra: {timestamp_str} online\n")
+                            print(f"{user}: {timestamp_str} online\n")
                     if "offline" in last_line:
                         if y == "offline":
                             y == "offline"
                         else:
                             ST.execute_scene(ST.scenes['Home']['Ashley4'])
                             y == "offline"
-                            print(f"Korra: {timestamp_str} offline\n")
+                            print(f"{user}: {timestamp_str} offline\n")
                     if "gaming" in last_line:
                         if y == "online":
                             y == "online"
                         else:
-                            ST.execute_scene(ST.scenes['Home']['Ashley5'])
+                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
                             y == "online"
-                            print(f"Korra: {timestamp_str} online\n")
+                            print(f"{user}: {timestamp_str} online\n")
                     if "listening" in last_line:
                         if y == "online":
                             y == "online"
                         else:
-                            ST.execute_scene(ST.scenes['Home']['Ashley6'])
+                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
                             y == "online"
-                            print(f"Korra: {timestamp_str} online\n")
+                            print(f"{user}: {timestamp_str} online\n")
                     if "playing" in last_line:
                         if y == "online":
                             y == "online"
                         else:
-                            ST.execute_scene(ST.scenes['Home']['Ashley7'])
+                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
                             y == "online"
-                            print(f"Korra: {timestamp_str} online\n")
+                            print(f"{user}: {timestamp_str} online\n")
 
 def watch_directory(path):
     observer = Observer()
