@@ -37,7 +37,7 @@ class FileOpenHandler(FileSystemEventHandler):
             user = "Korra"
             #print(f"File opened: {event.src_path} {timestamp_str} {config}")
             if x == config_file_path2:
-                file_path = 'my_text_file.txt'
+                file_path = 'Emma.txt'
                 with open(file_path, 'a') as file:
                     file.write(f"{user}: {timestamp_str} {config}\n")
                 with open(file_path, "r") as file:
