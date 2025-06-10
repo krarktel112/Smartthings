@@ -34,7 +34,7 @@ class FileOpenHandler(FileSystemEventHandler):
             timestamp_str = now.strftime("%Y-%m-%d %H:%M:%S")
             config = read_config_json(config_file_path)
             x = event.src_path
-            user = "Korra"
+            user = "Emma"
             #print(f"File opened: {event.src_path} {timestamp_str} {config}")
             if x == config_file_path2:
                 file_path = 'Emma.txt'
