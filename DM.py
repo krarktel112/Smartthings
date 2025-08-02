@@ -3,7 +3,6 @@ import json
 from datetime import datetime
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
-import SmartThings
 
 def read_config_json(file_path):
     try:
@@ -22,8 +21,6 @@ def read_config_json(file_path):
 config_file_path = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\MessageLoggerV2Data.config.json"
 config_file_path2 = r"C:\Users\User\AppData\Roaming\BetterDiscord\plugins\MessageLoggerV2Data.config.json"
 config = read_config_json(config_file_path)
-token = '372563b7-09f8-485b-8c95-261793424ad9'
-ST = SmartThings.Account(token)
 y = "pop"
 
 class FileOpenHandler(FileSystemEventHandler):
@@ -37,61 +34,7 @@ class FileOpenHandler(FileSystemEventHandler):
             user = "Korra"
             #print(f"File opened: {event.src_path} {timestamp_str} {config}")
             if x == config_file_path2:
-                file_path = 'my_text_file.txt'
-                with open(file_path, 'a') as file:
-                    file.write(f"{user}: {timestamp_str} {config}\n")
-                with open(file_path, "r") as file:
-                    lines = file.readlines()
-                    last_line = lines[-1]
-                    if "online" in last_line:
-                        if y == "online":
-                            y == "online"
-                        else:
-                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                            y == "online"
-                            print(f"{user}: {timestamp_str} online\n")
-                    if "idle" in last_line:
-                        if y == "online":
-                            y == "online"
-                        else:
-                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                            y == "online"
-                            print(f"{user}: {timestamp_str} online\n")
-                    if "dnd" in last_line:
-                        if y == "online":
-                            y == "online"
-                        else:
-                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                            y == "online"
-                            print(f"{user}: {timestamp_str} online\n")
-                    if "offline" in last_line:
-                        if y == "offline":
-                            y == "offline"
-                        else:
-                            ST.execute_scene(ST.scenes['Home']['Ashley4'])
-                            y == "offline"
-                            print(f"{user}: {timestamp_str} offline\n")
-                    if "gaming" in last_line:
-                        if y == "online":
-                            y == "online"
-                        else:
-                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                            y == "online"
-                            print(f"{user}: {timestamp_str} online\n")
-                    if "listening" in last_line:
-                        if y == "online":
-                            y == "online"
-                        else:
-                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                            y == "online"
-                            print(f"{user}: {timestamp_str} online\n")
-                    if "playing" in last_line:
-                        if y == "online":
-                            y == "online"
-                        else:
-                            ST.execute_scene(ST.scenes['Home']['Ashley1'])
-                            y == "online"
-                            print(f"{user}: {timestamp_str} online\n")
+                python3 Messages.py 260341 verizon dm
 
 def watch_directory(path):
     observer = Observer()
