@@ -31,10 +31,9 @@ class FileOpenHandler(FileSystemEventHandler):
             timestamp_str = now.strftime("%Y-%m-%d %H:%M:%S")
             config = read_config_json(config_file_path)
             x = event.src_path
-            user = "Korra"
-            #print(f"File opened: {event.src_path} {timestamp_str} {config}")
+            print(f"File opened: {event.src_path} {timestamp_str} {config}")
             if x == config_file_path2:
-                python3 Messages.py 260341 verizon dm
+                os.system("python3 Messages.py 260341 verizon dm")
 
 def watch_directory(path):
     observer = Observer()
