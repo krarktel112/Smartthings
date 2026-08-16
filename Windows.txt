@@ -1,0 +1,4 @@
+winget install Python.Python
+python get-pip.py
+sudo dnf install git-all
+pip install pyautogui
